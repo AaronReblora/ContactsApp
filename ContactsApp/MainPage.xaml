@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="ContactsApp.MainPage">
+
+    <StackLayout>
+        <!-- Title -->
+        <Label Text="Contacts"
+               FontSize="32"
+               HorizontalOptions="Center" />
+
+        <!-- ListView to display contacts -->
+        <ListView x:Name="ContactsListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Name}" FontSize="18" />
+                            <Label Text="{Binding PhoneNumber}" FontSize="14" TextColor="Gray" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Button to Add Contact -->
+        <Button Text="Add Contact"
+                Clicked="OnAddContactClicked"/>
+    </StackLayout>
+</ContentPage>
